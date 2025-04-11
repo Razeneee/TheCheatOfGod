@@ -196,7 +196,7 @@ local function LoadESP(Player)
                                 Bottom.Visible = theScriptOfGod.esp.Box.Box
                                 -- HealthBar.Visible = theScriptOfGod.esp.Box.HealthBar
                                 Name.Visible = theScriptOfGod.esp.Box.Name
-                                Distance.Visible = theScriptOfGod.esp.Box.Distance and not DinoVision.esp.Box.Name
+                                Distance.Visible = theScriptOfGod.esp.Box.Distance and not theScriptOfGod.esp.Box.Name
                                 -- Health.Visible = theScriptOfGod.esp.Box.Health
 
                                 Left.Size = UDim2.fromOffset(size.X, 1)
@@ -271,7 +271,7 @@ local function LoadESP(Player)
                                 local Origin = Vector2.new(CurrentCamera.ViewportSize.X / 2, CurrentCamera.ViewportSize.Y - 1)
                                 local TracerPosition = (Origin + ScreenVec2) / 2
 
-                                TracerOutline.Visible = theScriptOfGod.esp.Tracer.Outline and DinoVision.esp.Tracer.Tracer
+                                TracerOutline.Visible = theScriptOfGod.esp.Tracer.Outline and theScriptOfGod.esp.Tracer.Tracer
                                 Tracer.Visible = theScriptOfGod.esp.Tracer.Tracer
 
                                 Tracer.Rotation = math.deg(math.atan2(ScreenVec2.Y - Origin.Y, ScreenVec2.X - Origin.X))
@@ -300,7 +300,7 @@ local function LoadESP(Player)
                                 Hilight.FillTransparency = theScriptOfGod.esp.Highlights.FillTransparency
                                 Hilight.OutlineTransparency = theScriptOfGod.esp.Highlights.OutlineTransparency
 
-                                Hilight.DepthMode = (theScriptOfGod.esp.Highlights.AllWaysVisible and "AlwaysOnTop" or not DinoVision.esp.Highlights.AllWaysVisible and "Occluded");
+                                Hilight.DepthMode = (theScriptOfGod.esp.Highlights.AllWaysVisible and "AlwaysOnTop" or not theScriptOfGod.esp.Highlights.AllWaysVisible and "Occluded");
                             else
                                 Hilight.Enabled = false
                                 Hilight.Adornee = nil
@@ -397,7 +397,7 @@ Library:OnUnload(function()
 end)
 
 local Window = Library:CreateWindow({
-    Title = tostring(cloneref(game:GetService("MarketplaceService")):GetProductInfo(game.PlaceId).Name) .. "| " .. "DinoVision V1";
+    Title = tostring(cloneref(game:GetService("MarketplaceService")):GetProductInfo(game.PlaceId).Name) .. "| " .. "theScriptOfGod V0.0.3";
     Center = true,
     AutoShow = true,
     TabPadding = 8,
